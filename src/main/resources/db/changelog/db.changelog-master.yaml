@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: sv
+      changes:
+        - createSequence:
+            sequenceName: RESTAURANT_SEQ
+            startValue: 10
+            incrementBy: 50
+        - createTable: 
+            tableName: RESTAURANT
+            columns:
+              - column:
+                  name: id
+                  type: long
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: places
+                  type: int
+
